@@ -1,58 +1,58 @@
-# Teste de Analista de Dados
-Critérios avaliadas:
-- Docker;
-- SQL;
-- Python;
-- Organização do Código
-- Documentação
-- ETL
-- Modelagem dos dados
+# Teste Analista de Dados SX - Viviane Nunes Evangelista
 
-### Desejáveis
-- PySpark
-- Esquema Estrela
+### MySQL
+Para as questões de indicadores gerei script SQL no MySQL(Scripts MySQL.sql) com as queries das atividades propostas. Segue arquivo.
+São eles:
+    Indicadores MySQL aluno com maior nota;
+    Indicadores MySQL inscritos;
+    Indicadores MySQL media por disciplina;
+    Indicadores MySQL media por etnia;
+    Indicadores MySQL media por sexo.
+
+#### Tableau
+Gostaria de salientar que, na medida do possível, inclui as seguintes acessibilidades consideradas nas práticas de UX na elaboração das visões no painel analítico.
+    paleta de cores para os daltônicos;
+    informações reunidas em telas únicas para facilitar a navegação de pessoas com necessidades especiais. 
+
+Para as analises elaboradas no Tableau realizei a importação da tabela MICRODADOS_ENEM_2020.csv através dos recursos fornecidos pela própria ferramenta. 
+    Vide Fonte de Dados Tableau.
+Para as atividades de visualizações gráficas elaborei os painéis analíticos no Tableau.
+
+São eles: 
+    Painel Tableau Notas Enem;
+        visões:
+            qtde de inscritos;
+            média de notas;
+            média de notas por genero e tipo de escola;
+            média das notas por qtde de inscritos por UF.
+    Painel Tableau dispersão nota individual Enem;
+        visões:
+            dispersão dos candidatos por notas de prova;
+            média de notas por tipo de escola.
+    Painel Tableau Notas Redação;
+        visões:
+            media de notas da redação por faixa etária;
+            média das notas da redação por UF.
+    Painel Tableau Questionario socio economico.
+        visões:
+            questionário sócio econômico - internet em casa;
+            questionário sócio econômico - computador em casa.
+
+    Os paineis possuem filtros dinamicos (que interagem entre si):
+        UF da prova;
+        tipo de escola (particular ou pública);
+        genero(masculino ou feminino);
+        faixa etária. 
+
+### Insights 
+    Ao analisar os painéis, percebe-se, que a média das notas para os inscritos que declararam ter estudado nas escolas particulares é consideravelmente superior as notas dos inscritos que declararam estudar nas escolas públicas;
+    Este feito se repete nas notas da redação;
+    Para as médias de notas de redação percebe-se que a menor faixa de idade possui as maiores médias e a medida que as faixas de idades aumentam as notas da redação caem consideravelmente;
+    Para os questionários sócio economicos, fica claro que ter internet em casa contribui para uma boa média de notas. Em contra partida, ter computador em casa não fez real diferença  para as médias de notas. Podemos antecipadamente atribuir este feito ao uso do celular como recurso de estudo.
+    De acordo com os mapas nota-se que a região sudeste tem a maior concentração de quantidade de inscritos, mas a média das notas é relativamente uniforme por todas as regiões.
+    A quantidade de inscritos é relativamente uniforme para ambos os generos (masculinos e femininos), no entanto, é alta a quantidade de genero não informado.
 
 
-### Steps:
-
-1. Realizar um Fork desse projeto
-2. Realizar a modelagem dimensional da base
-    - A base está disponível para download [clicando aqui](https://download.inep.gov.br/microdados/microdados_enem_2020.zip).
-    - Após descompactar a paste, o Arquivo com a base encontra-se no diretório microdados_enem_2020/DADOS/MICRODADOS_ENEM_2020.csv
-    - A documentação necessária sobre os campos da base está disponível nos demais diretórios dentro da pasta descompactada.
-3. Realizar o ETL dessa base em Python para o MySQL no container
-4. Disponibilizar o link do seu repositório para posterior avaliação
-
-
-### Levantar Indicadores
-#### Responder às seguintes perguntas:
-1. Qual a escola com a maior média de notas?
-2. Qual o aluno com a maior média de notas e o valor dessa média?
-3. Qual a média geral?
-4. Qual o % de Ausentes?
-5. Qual o número total de Inscritos?
-6. Qual a média por disciplina?
-7. Qual a média por Sexo?
-8. Qual a média por Etnia?
-
-### Levantar Visões
-1. Gere visualizações gráficas que demonstrem a nota como indicador, trazendo as dimensões e os gráficos que melhor possam representar 
-a informação para avaliação da performance.
-2. Analisar correlações de variáveis que identificar dentro do dataset com a variável dependente nota total (NU_NOTA_CN
-NU_NOTA_CH, NU_NOTA_LC, NU_NOTA_M.T).
-3. Gerar visualizações (Data viz) que melhor estratifiquem e demonstremos dados do bloco de DADOS DA REDAÇÃO, verificando o comportamento
-das notas 4 provas vs. estes dados.
-4. Gerar visualizações (Data viz) que melhor estratifiquem e demonstremos dados do bloco de DADOS DO QUESTIONÁRIO SOCIOECONÔMICO, verificando
-o comportamento das notas 4 provas vs. estes dados.
-5. Faça um resumo em 10 bullets de Conclusões e Insights.
-
-### sugestões
-1. Tableau.
-2. Power BI.
-3. Qlik.
-4. Power Point.
-5. Excel.
-6. Colab.
 
 
 
